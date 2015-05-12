@@ -1,5 +1,8 @@
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -18,8 +21,14 @@ Bundle 'slim-template/vim-slim'
 Bundle 'sjurgemeyer/vim-grails-import'
 Bundle 'mileszs/ack.vim'
 Bundle 'tfnico/vim-gradle'
-Bundle 'vim-scripts/groovy'
 Bundle 'bpdp/vim-java'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+
+call vundle#end()
+
+filetype plugin indent on
 
 set number        " Show line numbers
 syntax enable     " Use syntax highlighting
@@ -28,8 +37,8 @@ colorscheme solarized
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-filetype plugin indent on " Required
-color jellybeans 
+map <C-n> :NERDTreeToggle<CR>
+
 set cursorline 
 set expandtab 
 set modelines=0 
@@ -49,8 +58,6 @@ set hlsearch
 set ignorecase 
 set smartcase
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeHighlightCursorline=1
 let mapleader=","
 let g:grails_import_search_path="~/source"
 
